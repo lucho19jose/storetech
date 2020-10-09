@@ -16,6 +16,8 @@ class Product extends Model
      *
      * @return array
      */
+    protected $fillable = ['name', 'description', 'category_id', 'iframe', 'image', 'user_id'];
+
     public function sluggable()
     {
         return [

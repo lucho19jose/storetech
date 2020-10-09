@@ -28,6 +28,11 @@ class DatabaseSeeder extends Seeder
             'description' => 'auriculares inalambricos que funcionan con blouthue genial'
         ]);
 
+        Category::create([
+            'name' => 'other',
+            'description' => 'otra cosa diferente a un inpods'
+        ]);
+
 
         /* Create 10 products */
         Product::factory(10)->create();

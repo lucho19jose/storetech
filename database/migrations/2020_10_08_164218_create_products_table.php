@@ -24,6 +24,8 @@ class CreateProductsTable extends Migration
 
             $table->string('image')->nullable();
 
+            $table->text('iframe')->nullable();
+
             $table->timestamps();
             /* relations */
             $table->foreign('user_id')->references('id')->on('users');

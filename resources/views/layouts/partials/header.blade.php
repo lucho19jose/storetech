@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#main">Productos <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ route('products.index') }}">Productos <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#speakers">Speakers</a>
@@ -24,7 +24,7 @@
               <a class="nav-link" href="#conviertete-en-orador">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="{{ route('home') }}">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-platzi" href="#" data-toggle="modal" data-target="#ModalVentas">Comprar
