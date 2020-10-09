@@ -23,11 +23,18 @@
                               <div class="card-body">
                                 <h5 class="card-title">{{$product->name}}</h5>
                                 <p class="card-text">{{$product->description}}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <a href="{{ route('product', $product) }}" class="btn btn-primary">Ver detalles</a>
                               </div>
                             </div>
                           </div> 
                       @endforeach
+                      <div class="container">
+                        <div class="row">
+                          <div class="col offset-1">
+                            {{$products->links()}}
+                          </div>
+                        </div>
+                      </div>
                     </div>   
                 </div>
             </div>

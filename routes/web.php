@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'products'])->name('products');
+Route::get('/product/{product}', [PageController::class, 'product'])->name('product');
 
 Auth::routes();
 
