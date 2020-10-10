@@ -21,7 +21,7 @@
                     @method('PUT')
                       <div class="form-group">
                         <label for="name">Nombre *</label>
-                        <input type="text" name="name" class="form-control" value="{{ $product->name}}">
+                        <input type="text" name="name" class="form-control" value="{{ old('name', $product->name)}}">
                       </div>
                       <div class="form-group">
                         <label for="image">Imagen *</label>
@@ -29,7 +29,7 @@
                       </div>
                       <div class="form-group">
                         <label for="description">Descripcion *</label>
-                        <textarea name="description" rows="6" class="form-control" >{{ $product->description}}</textarea>
+                        <textarea name="description" rows="6" class="form-control" >{{ old('name', $product->description)}}</textarea>
                       </div>
                       <div class="form-group">
                         <label for="category_id">Categoria *</label>
@@ -41,7 +41,7 @@
                       </div>
                       <div class="form-group">
                         <label for="iframe">Contenido embebido *</label>
-                        <textarea name="iframe" class="form-control">{{ $product->iframe}}</textarea>
+                        <textarea name="iframe" class="form-control">{{ old('iframe', $product->iframe)}}</textarea>
                       </div>
                         @csrf
                         <button type="submit" class="btn btn-sm btn-secondary">Enviar</button>

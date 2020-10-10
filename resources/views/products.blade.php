@@ -19,10 +19,14 @@
                       @foreach ($products as $product)
                           <div class="col-4 offset-1">
                             <div class="card" style="width: 18rem;">
-                              <img src="https://i.linio.com/p/5d99f8c37e9b386ddf40bd1737b9a4a7-product.webp" class="card-img-top" alt="inpod blanco">
+                              @if ($product->image)
+                                <img src="{{ $product->get_image }}" class="card-img-top" alt="inpod blanco">
+                              @else
+                                <img src="https://gloimg.gbtcdn.com/images/pdm-provider-img/straight-product-img/20191205/T041749/T0417490608/source-img/204656-8091.jpg_500x500.jpg" class="card-img-top" alt="inpod blanco">   
+                              @endif
                               <div class="card-body">
                                 <h5 class="card-title">{{$product->name}}</h5>
-                                <p class="card-text">{{$product->description}}</p>
+                                <p class="card-text">{{$product->get_excerpt}}...</p>
                                 <a href="{{ route('product', $product) }}" class="btn btn-primary">Ver detalles</a>
                               </div>
                             </div>
