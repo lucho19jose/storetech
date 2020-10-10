@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Productos</div>
                 <div class="container mt-2">
-                  <a href="{{ route('products.create')}}" class="btn btn-sm btn-primary">Crear nuevo articulo</a>
+                  <a href="{{ route('products.create')}}" class="btn btn-sm btn-primary">Crear nuevo producto</a>
                 </div>
                 <div class="card-body">
                     @if (session('status'))
