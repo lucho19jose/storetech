@@ -3,7 +3,7 @@
   <header>
     <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="https://icon-library.com/images/tech-icon-png/tech-icon-png-16.jpg" alt="conf2020" height="50px"></a>
+        <a class="navbar-brand" href="{{ route('products')}}"><img src="https://www.freepngimg.com/thumb/b2b/4-2-b2b-picture-thumb.png" alt="conf2020" height="60px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

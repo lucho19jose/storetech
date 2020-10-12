@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col">
             <div class="card">
                 <div class="card-header">Productos</div>
 
@@ -17,12 +17,12 @@
                     @endif
                     <div class="row">
                       @foreach ($products as $product)
-                          <div class="col-4 offset-1">
+                          <div class="col-5 offset-1 pb-4">
                             <div class="card" style="width: 18rem;">
                               @if ($product->image)
-                                <img src="{{ $product->get_image }}" class="card-img-top" alt="inpod blanco">
+                                <img src="{{ $product->get_image }}" class="card-img-top" alt="inpod blanco" height="300px">
                               @else
-                                <img src="https://gloimg.gbtcdn.com/images/pdm-provider-img/straight-product-img/20191205/T041749/T0417490608/source-img/204656-8091.jpg_500x500.jpg" class="card-img-top" alt="inpod blanco">   
+                                <img src="https://gloimg.gbtcdn.com/images/pdm-provider-img/straight-product-img/20191205/T041749/T0417490608/source-img/204656-8091.jpg_500x500.jpg" class="card-img-top" alt="{{ $product->name}}">   
                               @endif
                               <div class="card-body">
                                 <h5 class="card-title">{{$product->name}}</h5>
