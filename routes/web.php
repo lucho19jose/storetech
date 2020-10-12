@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'products'])->name('products');
 Route::get('/product/{product}', [PageController::class, 'product'])->name('product');
 
-Route::resource('/products', ProductController::class)->middleware('auth')->except('show');
+Route::resource('/products', ProductController::class)->middleware('admin', 'Auth')->except('show');
 
 Auth::routes();
 
