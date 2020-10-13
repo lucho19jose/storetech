@@ -54,17 +54,32 @@
                           @endif
                         </div>
                       </div>
+                      {{-- section Comentary --}}
                       <div class="row">
                         <div class="col">
                           <br><h4>Coments</h4>
-                          <form>
+                          <form action=" {{ route('coments', $product) }}" method="POST">
+                            @csrf
                             <div class="form-group">
-                              <label for="coment-content">Content</label>
-                              <textarea name="coment-content" rows="6" class="form-control"></textarea>
+                              <label for="content">Content</label>
+                              <textarea name="content" rows="6" class="form-control"></textarea>
                               <small id="emailHelp" class="form-text text-muted">feedback :)</small>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                           </form>
+                        </div>
+                      </div>
+                      {{-- listar comentarios --}}
+                      <div class="row pt-2">
+                        <div class="col">
+                          @foreach ($comments as $comment)
+                            <div class="card mt-1">
+                              <div class="card-body">
+                              <small>{{ $comment->get_author->name}} - {{ $comment->created_at->format('d M Y')}}</small>
+                                <p> Said: {{ $comment->content}}</p>
+                              </div>
+                            </div>
+                          @endforeach
                         </div>
                       </div>
                     </div>

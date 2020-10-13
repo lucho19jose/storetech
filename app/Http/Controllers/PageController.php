@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,7 @@ class PageController extends Controller
 
     public function product(Product $product)
     {
-        return view('product', compact('product'));
+        $comments = Comment::where('product_id', $product->id)->get();
+        return view('product', compact('product'), compact('comments'));
     }
 }

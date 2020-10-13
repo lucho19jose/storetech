@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +22,8 @@ Route::get('/', [PageController::class, 'products'])->name('products');
 Route::get('/product/{product}', [PageController::class, 'product'])->name('product');
 
 Route::resource('/products', ProductController::class)->middleware('admin', 'Auth')->except('show');
+
+Route::post('/coment/{product}', [CommentController::class, 'save'])->name('coments');
 
 Auth::routes();
 

@@ -17,7 +17,7 @@
                     @endif
                     <div class="row">
                       @foreach ($products as $product)
-                          <div class="col-5 offset-1 pb-4">
+                          <div class="col-12 col-md-5 offset-md-1 pb-4">
                             <div class="card" style="width: 18rem;">
                               @if ($product->image)
                                 <img src="{{ $product->get_image }}" class="card-img-top" alt="inpod blanco" height="300px">
