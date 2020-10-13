@@ -5,8 +5,11 @@
 
 @section('content')
 <div class="container">
+    {{-- <div class="row">
+      <h2>Mame</h2>
+    </div> --}}
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 pt-4">
             <div class="card">
                 <div class="card-header"><h2>{{ $product->name }}</h2></div>
 
@@ -49,6 +52,19 @@
                           @if ($product->image)
                             <img src="{{ $product->get_image }}" class="card-img-top" alt="{{ $product->name }}">     
                           @endif
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <br><h4>Coments</h4>
+                          <form>
+                            <div class="form-group">
+                              <label for="coment-content">Content</label>
+                              <textarea name="coment-content" rows="6" class="form-control"></textarea>
+                              <small id="emailHelp" class="form-text text-muted">feedback :)</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
                         </div>
                       </div>
                     </div>

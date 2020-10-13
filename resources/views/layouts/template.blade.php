@@ -12,8 +12,11 @@
 <body>
     <h1 class="text-center">B2B Andahuaylas</h1>
     @include('layouts.partials.header')
-    @include('layouts.partials.main')
+    @isset($products)
+        @include('layouts.partials.main')       
+    @endisset
     @yield('content')
+    @include('layouts.partials.footer')
     @include('layouts.partials.scripts')
 </body>
 </html>
