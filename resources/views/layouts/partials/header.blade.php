@@ -4,6 +4,7 @@
     <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="{{ route('products')}}"><img src="https://www.freepngimg.com/thumb/b2b/4-2-b2b-picture-thumb.png" alt="conf2020" height="60px"></a>
+        <p class="title">Andahuaylas</p>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

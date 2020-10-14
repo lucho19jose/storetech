@@ -58,12 +58,15 @@
                       <div class="row">
                         <div class="col">
                           <br><h4>Coments</h4>
-                          <form action=" {{ route('coments', $product) }}" method="POST">
+                          <form action=" {{ route('coments', $product) }}" method="POST" class="needs-validation" novalidate>
                             @csrf
                             <div class="form-group">
                               <label for="content">Content</label>
-                              <textarea name="content" rows="6" class="form-control"></textarea>
+                              <textarea name="content" rows="6" class="form-control" id="validationCustom01" required></textarea>
                               <small id="emailHelp" class="form-text text-muted">feedback :)</small>
+                              <div class="invalid-feedback">
+                                Please login and comment.
+                              </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                           </form>

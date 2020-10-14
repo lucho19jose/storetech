@@ -23,7 +23,7 @@ Route::get('/product/{product}', [PageController::class, 'product'])->name('prod
 
 Route::resource('/products', ProductController::class)->middleware('admin', 'Auth')->except('show');
 
-Route::post('/coment/{product}', [CommentController::class, 'save'])->name('coments');
+Route::post('/coment/{product}', [CommentController::class, 'save'])->name('coments')->middleware('auth');
 
 Auth::routes();
 

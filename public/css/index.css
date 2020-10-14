@@ -15,3 +15,8 @@ body{
 #footer a{
  color: white; 
 }
+
+nav .title{
+  padding-top: 13px;
+  color: white;
+}
