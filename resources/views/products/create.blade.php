@@ -24,7 +24,7 @@
                       </div>
                       <div class="form-group">
                         <label for="image">Imagen *</label>
-                        <input type="file" name="file" class="form-control">
+                        <input type="file" name="files[]" class="form-control" multiple>
                       </div>
                       <div class="form-group">
                         <label for="description">Descripcion *</label>

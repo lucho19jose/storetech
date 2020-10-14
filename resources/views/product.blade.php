@@ -54,6 +54,15 @@
                           @endif
                         </div>
                       </div>
+                      <div class="row">
+                        <div class="col-6">
+                          @if ($images)
+                            @foreach ($images as $image)
+                              <img src="{{ $image->get_image }}" class="card-img-top" alt="{{ $image->id }}">
+                            @endforeach     
+                          @endif
+                        </div>
+                      </div>
                       {{-- section Comentary --}}
                       <div class="row">
                         <div class="col">

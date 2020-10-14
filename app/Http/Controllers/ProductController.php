@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Models\Category;
+use App\Models\Comment;
+use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -44,9 +46,15 @@ class ProductController extends Controller
     {
         $product = Product::create(['user_id' => auth()->user()->id] + $request->all());
 
-        if ($request->file('file')) {
-            $product->image = $request->file('file')->store('product', 'public');
-            $product->save();
+        if ($request->file('files')) {
+            $files = $request->file('files');
+            $product_id = Product::latest()->first()->id;
+            foreach ($files as $file) {
+                Image::create([
+                    'image' => $file->store('product', 'public'),
+                    'product_id' => $product_id
+                ]);
+            }
         }
 
         return back()->with('status', 'creado exitosamente');
@@ -104,8 +112,21 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        $images = Image::where('product_id', $product->id)->get();
+        $comments = Comment::where('product_id', $product->id)->get();
         if ($product->image) {
             Storage::disk('public')->delete($product->image);
+        }
+        if ($images) {
+            foreach ($images as $image) {
+                Storage::disk('public')->delete($image->image);
+                $image->delete();
+            }
+        }
+        if ($comments) {
+            foreach ($comments as $commnet) {
+                $commnet->delete();
+            }
         }
 
         $product->delete();
