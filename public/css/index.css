@@ -20,3 +20,7 @@ nav .title{
   padding-top: 13px;
   color: white;
 }
+#showProduct{
+  max-height: 375px !important;
+  width: 500px !important;
+}
