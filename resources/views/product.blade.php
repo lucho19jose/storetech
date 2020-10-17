@@ -66,11 +66,11 @@
                                   @foreach ($images as $image)
                                     @if ($item == 0)
                                       <div class="carousel-item active">
-                                        <img id="showProduct" src="{{ $image->get_image }}" class="d-block w-100" alt="...">    
+                                        <img id="showProduct" src="{{ $image->get_image }}" class="d-block w-120" alt="...">    
                                       </div>    
                                     @else
                                       <div class="carousel-item">
-                                        <img id="showProduct" src="{{ $image->get_image }}" class="d-block w-100" alt="...">    
+                                        <img id="showProduct" src="{{ $image->get_image }}" class="d-block w-120" alt="...">    
                                       </div>    
                                     @endif
                                     <?php $item++ ?>                                   

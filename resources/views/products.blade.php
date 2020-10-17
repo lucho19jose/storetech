@@ -21,7 +21,7 @@
                             <div class="card" style="width: 18rem;">
                               @foreach ($images as $image)
                                 @if ($image->product_id == $product->id)
-                                  <img src="{{ $image->get_image }}" class="card-img-top" alt="inpod blanco" height="300px">
+                                  <img src="{{ $image->get_image }}" class="card-img-top" alt="{{ $image->product_id }}" height="300px">
                                   @break
                                 @endif
                               @endforeach

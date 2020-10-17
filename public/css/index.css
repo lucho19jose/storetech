@@ -21,6 +21,6 @@ nav .title{
   color: white;
 }
 #showProduct{
-  max-height: 375px !important;
-  width: 500px !important;
+  height: 400px !important;
+  width: 550px !important;
 }
