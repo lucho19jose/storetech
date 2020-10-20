@@ -94,11 +94,29 @@ class ProductController extends Controller
     {
         $product->update($request->all());
 
-        if ($request->file('file')) {
+        /* if ($request->file('file')) {
 
             Storage::disk('public')->delete($product->image);
             $product->image = $request->file('file')->store('product', 'public');
             $product->save();
+        } */
+
+        if ($request->file('files')) {
+            $images = Image::where('product_id', $product->id)->get();
+            if ($images) {
+                foreach ($images as $image) {
+                    Storage::disk('public')->delete($image->image);
+                    $image->delete();
+                }
+            }
+
+            $files = $request->file('files');
+            foreach ($files as $file) {
+                Image::create([
+                    'image' => $file->store('product', 'public'),
+                    'product_id' => $product->id
+                ]);
+            }
         }
 
         return back()->with('status', 'update with success ');
